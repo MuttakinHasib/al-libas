@@ -3,7 +3,10 @@ const { getDefaultConfig } = require('@expo/metro-config');
 const { mergeConfig } = require('metro-config');
 const exclusionList = require('metro-config/src/defaults/exclusionList');
 
-const defaultConfig = getDefaultConfig(__dirname);
+const defaultConfig = getDefaultConfig(__dirname, {
+  isCSSEnabled: true,
+});
+
 const { assetExts, sourceExts } = defaultConfig.resolver;
 
 /**

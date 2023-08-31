@@ -14,7 +14,11 @@
     "@nx/expo": "*",
     "@expo/metro-config": "*",
     "react-native-svg-transformer": "*",
-    "react": "*"
+    "react": "*",
+    "@expo/vector-icons": "*",
+    "@react-navigation/native": "*",
+    "expo-font": "*",
+    "expo-router": "*"
   },
   "scripts": {
     "eas-build-pre-install": "cd ../../ && node tools/scripts/eas-build-pre-install.mjs . apps/mobile && cp yarn.lock apps/mobile",

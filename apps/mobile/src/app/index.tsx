@@ -27,7 +27,7 @@ export const App = () => {
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}
         >
-          <View style={styles.section}>
+          <View className="bg-red-600">
             <Text style={styles.textLg}>Hello there,</Text>
             <Text style={[styles.textXL, styles.appTitleText]} testID="heading">
               Welcome Al Libas 👋
