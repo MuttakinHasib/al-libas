@@ -2,6 +2,7 @@
   "name": "mobile",
   "version": "0.0.1",
   "private": true,
+  "main": "expo-router/entry",
   "dependencies": {
     "@testing-library/jest-native": "*",
     "@testing-library/react-native": "*",

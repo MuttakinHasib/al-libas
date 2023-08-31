@@ -3,6 +3,7 @@
     "name": "Al Libas",
     "slug": "mobile",
     "version": "1.0.0",
+    "scheme": "al-libas",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -34,7 +35,11 @@
           "skipProguard": false,
           "subdomains": ["10.0.2.2", "localhost"]
         }
-      ]
-    ]
+      ],
+      "expo-router"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
   }
 }
