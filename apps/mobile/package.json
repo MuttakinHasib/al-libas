@@ -20,7 +20,9 @@
     "expo-font": "*",
     "expo-router": "*",
     "@expo-google-fonts/inter": "*",
-    "react-native-safe-area-context": "*"
+    "react-native-safe-area-context": "*",
+    "expo-image": "*",
+    "expo-asset": "*"
   },
   "scripts": {
     "eas-build-pre-install": "cd ../../ && node tools/scripts/eas-build-pre-install.mjs . apps/mobile && cp yarn.lock apps/mobile",

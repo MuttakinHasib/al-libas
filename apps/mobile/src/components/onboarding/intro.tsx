@@ -38,7 +38,7 @@ const IntroScreen = (props: Props) => {
           </View>
           <View className="gap-6">
             <Text className="text-center font-inter-black text-3xl">
-              The <Text className="text-yellow-900">Al Libas</Text> that {'\n'}{' '}
+              <Text className="text-yellow-900">Al Libas</Text> that {'\n'}{' '}
               makes you look your best
             </Text>
             <Text className="text-center font-inter-regular text-base">
@@ -55,7 +55,7 @@ const IntroScreen = (props: Props) => {
               </Text>
             </TouchableOpacity>
             <TouchableOpacity>
-              <Text className="text-center font-inter-regular text-base">
+              <Text className="text-center font-inter-regular text-base pb-5">
                 Already have an account?{' '}
                 <Text className="text-yellow-900">Sign In</Text>
               </Text>
