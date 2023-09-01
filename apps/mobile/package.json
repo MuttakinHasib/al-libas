@@ -18,7 +18,9 @@
     "@expo/vector-icons": "*",
     "@react-navigation/native": "*",
     "expo-font": "*",
-    "expo-router": "*"
+    "expo-router": "*",
+    "@expo-google-fonts/inter": "*",
+    "react-native-safe-area-context": "*"
   },
   "scripts": {
     "eas-build-pre-install": "cd ../../ && node tools/scripts/eas-build-pre-install.mjs . apps/mobile && cp yarn.lock apps/mobile",
