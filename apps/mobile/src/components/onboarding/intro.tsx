@@ -4,12 +4,29 @@ import {
   SafeAreaView,
   ScrollView,
   TouchableOpacity,
+  Animated,
+  useWindowDimensions,
 } from 'react-native';
 import React from 'react';
 
-const IntroScreen = () => {
+interface Props {
+  onNextClick: () => void;
+  animationController: React.MutableRefObject<Animated.Value>;
+}
+
+const IntroScreen = (props: Props) => {
+  const window = useWindowDimensions();
+
+  const translateY = props.animationController.current.interpolate({
+    inputRange: [0, 0.2, 0.8],
+    outputRange: [0, -window.height, -window.height],
+  });
+
   return (
-    <View className="flex-1 px-5">
+    <Animated.View
+      className="flex-1 px-5"
+      style={{ transform: [{ translateY }] }}
+    >
       <ScrollView className="flex-grow-0 h-full" alwaysBounceVertical={false}>
         <SafeAreaView className="flex h-screen justify-between">
           <View className="flex flex-row justify-between pt-16">
@@ -31,6 +48,7 @@ const IntroScreen = () => {
             <TouchableOpacity
               className="py-5 px-10 bg-yellow-900 rounded-full"
               activeOpacity={0.8}
+              onPress={props.onNextClick}
             >
               <Text className="font-bold text-xl text-center text-white">
                 Let's get started
@@ -45,7 +63,7 @@ const IntroScreen = () => {
           </View>
         </SafeAreaView>
       </ScrollView>
-    </View>
+    </Animated.View>
   );
 };
 

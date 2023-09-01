@@ -15,7 +15,7 @@ import {
 } from '@expo-google-fonts/inter';
 import { SplashScreen, Stack } from 'expo-router';
 import { useEffect } from 'react';
-import { SafeAreaView, useColorScheme } from 'react-native';
+import { useColorScheme } from 'react-native';
 import '../styles/global.css';
 export {
   // Catch any errors thrown by the Layout component.
@@ -38,6 +38,7 @@ export default function RootLayout() {
     Inter_600SemiBold,
     Inter_700Bold,
     Inter_900Black,
+    ...FontAwesome.font,
   });
 
   // Expo Router uses Error Boundaries to catch errors in the navigation tree.
