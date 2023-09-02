@@ -6,7 +6,7 @@ interface Props {
   selectedIndex: number;
 }
 
-const DotIndicator = ({ index, selectedIndex }: Props) => {
+export const DotIndicator = ({ index, selectedIndex }: Props) => {
   const activeIndexRef = useRef(new Animated.Value(0));
 
   useEffect(() => {
@@ -34,5 +34,3 @@ const DotIndicator = ({ index, selectedIndex }: Props) => {
     />
   );
 };
-
-export default DotIndicator;

@@ -15,6 +15,7 @@
     "@nestjs/core": "^10.0.2",
     "@nestjs/platform-express": "^10.0.2",
     "axios": "^1.0.0",
+    "clsx": "^2.0.0",
     "expo": "49.0.3",
     "expo-asset": "~8.10.1",
     "expo-constants": "~14.4.2",
@@ -36,6 +37,7 @@
     "react-native-web": "~0.19.6",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.0",
+    "tailwind-merge": "^1.14.0",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
@@ -61,6 +63,8 @@
     "@types/react-native": "0.72.2",
     "@typescript-eslint/eslint-plugin": "^5.60.1",
     "@typescript-eslint/parser": "^5.60.1",
+    "autoprefixer": "10.4.13",
+    "babel-jest": "^29.4.1",
     "babel-preset-expo": "~9.5.0",
     "detox": "^20.11.1",
     "eas-cli": "~3.15.1",
@@ -79,6 +83,7 @@
     "metro-resolver": "0.76.7",
     "nx": "16.7.4",
     "nx-cloud": "latest",
+    "postcss": "8.4.21",
     "prettier": "^2.6.2",
     "react-test-renderer": "18.2.0",
     "tailwindcss": "3.3.2",

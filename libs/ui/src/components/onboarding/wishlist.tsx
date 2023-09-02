@@ -1,11 +1,12 @@
 import { StyleSheet, Text, Animated, useWindowDimensions } from 'react-native';
 import React, { FC } from 'react';
+import { Heading, Paragraph } from '../text';
 
 interface Props {
   animationController: React.MutableRefObject<Animated.Value>;
 }
 
-const Wishlist: FC<Props> = ({ animationController }) => {
+export const Wishlist: FC<Props> = ({ animationController }) => {
   const window = useWindowDimensions();
 
   const slideAnimation = animationController.current.interpolate({
@@ -15,22 +16,20 @@ const Wishlist: FC<Props> = ({ animationController }) => {
 
   return (
     <Animated.View
-      className="gap-6 justify-center"
+      className="gap-y-6 justify-center px-5"
       style={{
         transform: [{ translateX: slideAnimation }],
         ...StyleSheet.absoluteFillObject,
       }}
     >
-      <Text className="text-center font-inter-semibold text-3xl capitalize">
+      <Heading>
         Wishlist: where <Text className="text-yellow-900">fashion dreams</Text>{' '}
         begin
-      </Text>
-      <Text className="text-center font-inter-regular text-base">
+      </Heading>
+      <Paragraph>
         Step into a world where style knows no bounds and possibilities are
         endless
-      </Text>
+      </Paragraph>
     </Animated.View>
   );
 };
-
-export default Wishlist;

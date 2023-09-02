@@ -2,7 +2,7 @@ import { View, TouchableOpacity, Animated } from 'react-native';
 import React, { useEffect, useMemo, useState } from 'react';
 import { AntDesign } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import DotIndicator from './dot-indicator';
+import { DotIndicator } from './dot-indicator';
 
 interface Props {
   onBackClick: () => void;
@@ -10,7 +10,7 @@ interface Props {
   animationController: React.MutableRefObject<Animated.Value>;
 }
 
-const BottomNavigator = ({
+export const BottomNavigator = ({
   animationController,
   onBackClick,
   onNextClick,
@@ -33,12 +33,12 @@ const BottomNavigator = ({
     });
   }, [animationController]);
 
-  const dots = useMemo(() => [0, 1, 2, 3], []);
+  const dots = useMemo(() => [0, 1, 2], []);
 
   return (
     <View
       className="flex-row justify-between items-center"
-      style={{ marginVertical: bottom }}
+      style={{ marginTop: bottom, marginBottom: bottom * 2 }}
     >
       <TouchableOpacity
         className="h-16 w-16 border border-yellow-900 items-center justify-center rounded-full"
@@ -47,7 +47,7 @@ const BottomNavigator = ({
         <AntDesign name="arrowleft" size={24} color="black" />
       </TouchableOpacity>
 
-      <View className="flex-row gap-3">
+      <View className="flex-row gap-x-3">
         {dots.map((item) => (
           <View key={item}>
             <DotIndicator index={item} {...{ selectedIndex }} />
@@ -63,5 +63,3 @@ const BottomNavigator = ({
     </View>
   );
 };
-
-export default BottomNavigator;

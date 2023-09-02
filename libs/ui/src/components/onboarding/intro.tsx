@@ -8,13 +8,14 @@ import {
   useWindowDimensions,
 } from 'react-native';
 import React from 'react';
+import { Heading, Paragraph } from '../text';
 
 interface Props {
   onNextClick: () => void;
   animationController: React.MutableRefObject<Animated.Value>;
 }
 
-const IntroScreen = (props: Props) => {
+export const IntroScreen = (props: Props) => {
   const window = useWindowDimensions();
 
   const translateY = props.animationController.current.interpolate({
@@ -31,20 +32,20 @@ const IntroScreen = (props: Props) => {
         <SafeAreaView className="flex h-screen justify-between">
           <View className="flex flex-row justify-between pt-16">
             <View className="h-full w-44 bg-red-500 rounded-t-full rounded-b-full"></View>
-            <View className="gap-5">
+            <View className="gap-y-5">
               <View className="h-48 w-44 bg-pink-400 rounded-t-full rounded-b-full"></View>
               <View className="h-44 w-44 bg-blue-400 rounded-t-full rounded-b-full"></View>
             </View>
           </View>
-          <View className="gap-6">
-            <Text className="text-center font-inter-black text-3xl">
+          <View className="gap-y-6">
+            <Heading className="font-inter-black">
               <Text className="text-yellow-900">Al Libas</Text> that {'\n'}{' '}
               makes you look your best
-            </Text>
-            <Text className="text-center font-inter-regular text-base">
+            </Heading>
+            <Paragraph>
               Elevate your style and confidence with attire that ensures you
               look your best for any occasion.
-            </Text>
+            </Paragraph>
             <TouchableOpacity
               className="py-5 px-10 bg-yellow-900 rounded-full"
               activeOpacity={0.8}
@@ -55,10 +56,10 @@ const IntroScreen = (props: Props) => {
               </Text>
             </TouchableOpacity>
             <TouchableOpacity>
-              <Text className="text-center font-inter-regular text-base pb-5">
+              <Paragraph className="text-black">
                 Already have an account?{' '}
                 <Text className="text-yellow-900">Sign In</Text>
-              </Text>
+              </Paragraph>
             </TouchableOpacity>
           </View>
         </SafeAreaView>
@@ -66,5 +67,3 @@ const IntroScreen = (props: Props) => {
     </Animated.View>
   );
 };
-
-export default IntroScreen;

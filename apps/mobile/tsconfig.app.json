@@ -3,14 +3,20 @@
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
     "types": ["node"],
-    "composite": true
+    "composite": true,
   },
-  "files": ["../../node_modules/@nx/expo/typings/svg.d.ts"],
+  "files": ["../../node_modules/@nx/expo/typings/svg.d.ts",],
   "exclude": [
     "jest.config.ts",
     "**/*.spec.ts",
     "**/*.spec.tsx",
     "test-setup.ts"
   ],
-  "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"]
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
+    "../../libs/ui/src/index.ts"  // Add this line to include the missing file
+  ]
 }
