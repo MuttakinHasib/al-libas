@@ -70,7 +70,7 @@ const Onboarding = () => {
     } else if (animationValue.current > 0.2 && animationValue.current <= 0.4) {
       toValue = 0.6;
     } else if (animationValue.current > 0.4 && animationValue.current <= 0.6) {
-      router.push('/login');
+      router.push('/register');
     }
 
     toValue !== undefined && playAnimation(toValue);

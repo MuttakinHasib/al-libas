@@ -1,3 +1,4 @@
+import { Link } from 'expo-router';
 import {
   View,
   Text,
@@ -55,12 +56,14 @@ export const IntroScreen = (props: Props) => {
                 Let's get started
               </Text>
             </TouchableOpacity>
-            <TouchableOpacity>
-              <Paragraph className="text-black">
-                Already have an account?{' '}
-                <Text className="text-yellow-900">Sign In</Text>
-              </Paragraph>
-            </TouchableOpacity>
+            <Link href="/login" asChild>
+              <TouchableOpacity>
+                <Paragraph className="text-black">
+                  Already have an account?{' '}
+                  <Text className="text-yellow-900">Sign In</Text>
+                </Paragraph>
+              </TouchableOpacity>
+            </Link>
           </View>
         </SafeAreaView>
       </ScrollView>

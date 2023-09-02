@@ -18,7 +18,7 @@ import { Button, Heading, Paragraph, TextInput } from '@al-libas/ui';
 import { KeyboardAvoidingView } from 'react-native';
 import { Link } from 'expo-router';
 
-const LoginPage = () => {
+const RegisterPage = () => {
   const email = useRef<Input | null>(null);
   const password = useRef<Input | null>(null);
 
@@ -38,10 +38,21 @@ const LoginPage = () => {
             style={{ paddingBottom: bottom, paddingTop: top }}
           >
             <View className="gap-y-3">
-              <Heading>Let's go</Heading>
-              <Paragraph>Hi! Welcome back, you've been missed</Paragraph>
+              <Heading>Create an account </Heading>
+              <Paragraph>
+                Fill your information bellow or register with your social
+                account.
+              </Paragraph>
             </View>
             <View className="space-y-6">
+              <View>
+                <TextInput
+                  label="Name"
+                  textContentType="name"
+                  returnKeyType="next"
+                  onSubmitEditing={() => email?.current?.focus()}
+                />
+              </View>
               <View>
                 <TextInput
                   label="Email"
@@ -61,10 +72,10 @@ const LoginPage = () => {
                 />
               </View>
             </View>
-            <Button>Sign In</Button>
+            <Button>Sign Up</Button>
             <View className="flex-row items-center justify-center">
               <View className="h-[2px] max-w-[100px] w-full bg-gray-200" />
-              <Paragraph className="px-3">Or sign in with</Paragraph>
+              <Paragraph className="px-3">Or sign up with</Paragraph>
               <View className="h-[2px] max-w-[100px] w-full bg-gray-200" />
             </View>
             <View className="flex-row items-center justify-center space-x-5">
@@ -84,11 +95,11 @@ const LoginPage = () => {
                 </View>
               </TouchableOpacity>
             </View>
-            <Link href="/register" asChild>
+            <Link href="/login" asChild>
               <TouchableOpacity>
                 <Paragraph className="text-black">
-                  Don't have an account?{' '}
-                  <Text className="text-yellow-900">Sign Up</Text>
+                  Already have an account?{' '}
+                  <Text className="text-yellow-900">Sign In</Text>
                 </Paragraph>
               </TouchableOpacity>
             </Link>
@@ -99,4 +110,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default RegisterPage;
