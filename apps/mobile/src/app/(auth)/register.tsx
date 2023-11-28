@@ -80,18 +80,18 @@ const RegisterPage = () => {
             </View>
             <View className="flex-row items-center justify-center space-x-5">
               <TouchableOpacity>
-                <View className="border border-gray-200 w-16 h-16 justify-center items-center rounded-full">
-                  <FontAwesome5 name="apple" size={32} color="black" />
+                <View className="border border-gray-200 w-14 h-14 justify-center items-center rounded-full">
+                  <FontAwesome5 name="apple" size={25} color="black" />
                 </View>
               </TouchableOpacity>
               <TouchableOpacity>
-                <View className="border border-gray-200 w-16 h-16 justify-center items-center rounded-full">
-                  <FontAwesome5 name="google" size={32} color="#DB4437" />
+                <View className="border border-gray-200 w-14 h-14 justify-center items-center rounded-full">
+                  <FontAwesome5 name="google" size={25} color="#DB4437" />
                 </View>
               </TouchableOpacity>
               <TouchableOpacity>
-                <View className="border border-gray-200 w-16 h-16 justify-center items-center rounded-full">
-                  <FontAwesome5 name="facebook-f" size={32} color="#0165E1" />
+                <View className="border border-gray-200 w-14 h-14 justify-center items-center rounded-full">
+                  <FontAwesome5 name="facebook-f" size={25} color="#0165E1" />
                 </View>
               </TouchableOpacity>
             </View>
@@ -99,7 +99,7 @@ const RegisterPage = () => {
               <TouchableOpacity>
                 <Paragraph className="text-black">
                   Already have an account?{' '}
-                  <Text className="text-yellow-900">Sign In</Text>
+                  <Text className="text-primary">Sign In</Text>
                 </Paragraph>
               </TouchableOpacity>
             </Link>

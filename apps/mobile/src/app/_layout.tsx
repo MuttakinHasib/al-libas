@@ -69,7 +69,10 @@ function RootLayoutNav() {
         initialRouteName="(auth)/login"
       >
         <Stack.Screen name="(auth)/login" />
-        {/* <Stack.Screen name="modal" options={{ presentation: 'modal' }} /> */}
+        <Stack.Screen
+          name="access-location/index"
+          options={{ presentation: 'modal' }}
+        />
       </Stack>
     </ThemeProvider>
   );
