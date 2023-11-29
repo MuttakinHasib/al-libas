@@ -16,7 +16,7 @@ import {
 } from 'react-native-safe-area-context';
 import { Button, Heading, Paragraph, TextInput } from '@al-libas/ui';
 import { KeyboardAvoidingView } from 'react-native';
-import { Link, useNavigation } from 'expo-router';
+import { Link } from 'expo-router';
 
 const LoginPage = () => {
   const email = useRef<Input | null>(null);
@@ -24,7 +24,7 @@ const LoginPage = () => {
 
   const { height } = useWindowDimensions();
   const { bottom, top } = useSafeAreaInsets();
-  const navigation = useNavigation();
+
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}
@@ -63,7 +63,7 @@ const LoginPage = () => {
               </View>
             </View>
 
-            <Link href="/access-location" asChild>
+            <Link href="/home" asChild>
               <Button>Sign In</Button>
             </Link>
             <View className="flex-row items-center justify-center">

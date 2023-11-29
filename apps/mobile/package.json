@@ -27,7 +27,8 @@
     "tailwind-merge": "*",
     "tailwindcss": "*",
     "nativewind": "*",
-    "@nx/react": "*"
+    "@nx/react": "*",
+    "expo-location": "*"
   },
   "scripts": {
     "eas-build-pre-install": "cd ../../ && node tools/scripts/eas-build-pre-install.mjs . apps/mobile && cp yarn.lock apps/mobile",
