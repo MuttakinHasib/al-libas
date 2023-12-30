@@ -8,7 +8,7 @@ export const Heading: FC<Props> = ({ children, className, ...rest }) => (
   <Text
     {...rest}
     className={cn(
-      'text-center font-inter-semibold text-3xl capitalize',
+      'text-center font-inter-semibold text-2xl capitalize',
       className
     )}
   >

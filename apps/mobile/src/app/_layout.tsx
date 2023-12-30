@@ -15,7 +15,7 @@ import {
 } from '@expo-google-fonts/inter';
 import { SplashScreen, Stack } from 'expo-router';
 import { useEffect } from 'react';
-import { useColorScheme } from 'react-native';
+import { StatusBar, useColorScheme } from 'react-native';
 import '../styles/global.css';
 export {
   // Catch any errors thrown by the Layout component.
@@ -64,10 +64,8 @@ function RootLayoutNav() {
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack
-        screenOptions={{ headerShown: false }}
-        initialRouteName="(auth)/login"
-      >
+      <StatusBar barStyle="dark-content" />
+      <Stack screenOptions={{ headerShown: false }} initialRouteName="index">
         <Stack.Screen name="(auth)/login" />
         <Stack.Screen
           name="access-location/index"

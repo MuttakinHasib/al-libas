@@ -2,7 +2,7 @@ import { Tabs } from 'expo-router';
 import React from 'react';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { AntDesign } from '@expo/vector-icons';
-import { View } from 'react-native';
+import { Platform, View } from 'react-native';
 import { COLORS, cn } from '@al-libas/ui';
 
 const tabs = [
@@ -30,6 +30,7 @@ const tabs = [
 
 const TabsLayout = () => {
   const { bottom } = useSafeAreaInsets();
+
   return (
     <Tabs
       screenOptions={{
@@ -37,7 +38,7 @@ const TabsLayout = () => {
         tabBarShowLabel: false,
         tabBarStyle: {
           position: 'absolute',
-          bottom,
+          bottom: Platform.OS === 'ios' ? bottom : 20,
           display: 'flex',
           justifyContent: 'center',
           left: 20,
@@ -46,6 +47,8 @@ const TabsLayout = () => {
           backgroundColor: COLORS.secondary,
           borderRadius: 50,
           paddingBottom: 0,
+          overflow: 'hidden',
+          height: 70,
         },
       }}
     >

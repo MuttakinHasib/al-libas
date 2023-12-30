@@ -2,7 +2,6 @@ import {
   Animated,
   Easing,
   Platform,
-  StatusBar,
   StyleSheet,
   TouchableOpacity,
   View,
@@ -23,12 +22,15 @@ import {
 
 const Onboarding = () => {
   const window = useWindowDimensions();
-  const { top } = useSafeAreaInsets();
+  const { top, bottom } = useSafeAreaInsets();
   const router = useRouter();
   const animationController = useRef(new Animated.Value(0));
   const animationValue = useRef<number>(0);
 
-  const marginTop = Platform.OS ? top : StatusBar.currentHeight;
+  const paddingBottom =
+    (Platform.OS === 'ios' && bottom === 0) || Platform.OS === 'android'
+      ? 20
+      : 0;
 
   useEffect(() => {
     animationController.current.addListener(({ value }) => {
@@ -38,7 +40,7 @@ const Onboarding = () => {
 
   const headerTranslateY = animationController.current.interpolate({
     inputRange: [0, 0.2, 0.4, 0.6],
-    outputRange: [-(56 + (marginTop ?? 0)), 0, 0, 0],
+    outputRange: [-(56 + (top ?? 0)), 0, 0, 0],
   });
 
   const skipAnimation = animationController.current.interpolate({
@@ -95,11 +97,9 @@ const Onboarding = () => {
 
   return (
     <View className="flex-1 bg-white">
-      <StatusBar barStyle="dark-content" />
       <Animated.View
         className="absolute left-0 right-0 h-14 z-10 justify-center items-end px-5"
         style={{
-          marginTop,
           transform: [{ translateY: headerTranslateY }],
         }}
       >
@@ -121,12 +121,12 @@ const Onboarding = () => {
       >
         <View className="flex-1">
           <View className="flex-1" />
-          <View className="bg-white rounded-t-[55px] px-5 py-10 flex-[.2]">
+          <View className="bg-white rounded-t-[55px] px-5 py-10 h-44 overflow-hidden">
             <Experience {...{ animationController }} />
             <Wishlist {...{ animationController }} />
             <Delivery {...{ animationController }} />
           </View>
-          <View className="bg-white px-5">
+          <View className="bg-white px-5" style={{ paddingBottom }}>
             <BottomNavigator
               {...{
                 onBackClick,

@@ -28,7 +28,8 @@
     "tailwindcss": "*",
     "nativewind": "*",
     "@nx/react": "*",
-    "expo-location": "*"
+    "expo-location": "*",
+    "expo-image-picker": "*"
   },
   "scripts": {
     "eas-build-pre-install": "cd ../../ && node tools/scripts/eas-build-pre-install.mjs . apps/mobile && cp yarn.lock apps/mobile",

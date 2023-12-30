@@ -26,7 +26,7 @@ const RegisterPage = () => {
   const { bottom, top } = useSafeAreaInsets();
   return (
     <KeyboardAvoidingView
-      behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+      behavior={Platform.OS === 'android' ? 'padding' : undefined}
       style={{ height }}
       className="bg-white"
     >

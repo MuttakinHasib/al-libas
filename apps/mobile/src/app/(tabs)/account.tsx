@@ -43,7 +43,7 @@ const accountNav = [
 ];
 
 const AccountScreen = () => {
-  const [avatar, setAvatar] = useState(null);
+  const [avatar, setAvatar] = useState<string | null>(null);
   const pickImage = async () => {
     // No permissions request is necessary for launching the image library
     const result = await ImagePicker.launchImageLibraryAsync({
@@ -78,12 +78,9 @@ const AccountScreen = () => {
         return (
           <TouchableOpacity
             key={index}
-            className={cn(
-              'flex-row items-center justify-between divide-y-2 py-3',
-              {
-                'border-b border-lightGray': index !== accountNav.length - 1,
-              }
-            )}
+            className={cn('flex-row items-center justify-between py-3', {
+              'border-b border-lightGray': index !== accountNav.length - 1,
+            })}
           >
             <View className="flex-row items-center gap-x-3">
               {index === 0 ? (
